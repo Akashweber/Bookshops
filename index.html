@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head><title>Book Appoinnment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+.logo{
+margin:5px;
+height:25px;
+width:25px;
+background-color:black;
+}
+.navegtion{
+height:40px;
+width:100%;
+font-family:Arial Black;
+display:flex;
+justify-content:center;
+background-color:black;
+}
+#navmanu{
+font-size:15px;
+margin:10px;
+text-decoration:none;
+color:white;
+}
+#navmanu:hover{
+color:#f39c12;
+transition:all 0.3s ease-in-out;
+
+}
+.sbtn{
+margin-left:140px;
+border:none;
+color:white;
+background:none;
+font-size:18px;
+}
+.appointment-btn{
+
+color:white;
+margin:10px;
+height:25px;
+width:200px;
+border-left:solid 2px white;
+text-align:center;
+text-decoration:none;
+}
+.appointment-btn:hover{
+color:red;
+background-color:white;
+padding:3px ;
+border-radius:5px;
+}
+header{
+display:flex;
+justify-content:center;
+width:100%;
+height:170px;
+background-image: url("img/laibaray.JPG");
+background-size:cover;
+margin-top:0px;
+}
+.h1p1{
+margin-top:15px;
+text-align:center;
+}
+h1{
+font-family:Cooper Black;
+font-size:32px;
+margin:0px;
+color:white;
+}
+#p1{
+font-weight:bold;
+font-family:Bradley Hand ITC;
+font-size:15px;
+margin:4px;
+color:white;
+}
+.bookcontener{
+background-color:#7a370f ;
+width:100%;
+height:auto;
+}
+.historyside{
+width:100%;
+height:auto;
+text-align:center;
+display:flex;
+justify-content:space-evenly;
+flex-wrap:wrap;
+}
+.bookdtl{
+border:1px solid white;
+background-color:white;
+margin:20px;
+width:180px;
+height:270px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bookdtl:hover{
+box-shadow: 0 8px 12px 0  #bb7609
+;
+}
+h4{
+font-size:14px;
+margin-top:2px;
+color:red;
+margin-bottom:5px;
+}
+.submitbutton{
+color:white;
+border:none;
+width:176px;
+height:30px;
+background-color:#734a09;
+border-radius:6%;
+}
+h3{
+margin-left:20px;
+margin-top:0px;
+}
+#h3{
+margin-left:5px;
+position:relative;
+top:10px;
+background-color:white;
+height:30px;
+width:99%;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* Sits on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less depending on screen size */
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    text-align: left;
+}
+
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+</style>
+</head>
+<body>
+<div class="contenar">
+	<nav class="navegtion">
+	<div class="logo">
+	<img src="Untitled.png"width="25px"height="25px";>
+	</div>
+	<a href="#"id="navmanu">Home</a>
+	<a href="#"id="navmanu">About Us</a>
+	<a href="#"id="navmanu">Sorvice</a>
+	<a href="#"id="navmanu">Pages</a>
+	<a href="#"id="navmanu">Blog</a>
+	<a href="#"id="navmanu">Contact</a> 
+	<button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
+<a href="#" class="appointment-btn" id="appointment-btn">Free Appointment</a>
+	</nav>
+	<header>
+		<div class="h1p1">
+		<h1>Book Appoinnment</h1>
+		<p id="p1">Make your Choice And Make your life good
+		<br/>
+		<u>bookappoinment.com</u>
+		</p>
+		</div>
+	</header>
+	<div class="bookcontener">	
+				 <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login or Sign Up</h2>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+	<div id="h3"><h3>History Books</h3></div>
+		<div class="historyside">
+			<div class="bookdtl" id="box1"><img src="wh2.jpg"width="180px"height="180px";/>
+			<h4>The Usborne book Of <br/>World History <br/>1965</h4>
+			<a href="wh2.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>	
+			<div class="bookdtl" id="box1"><img src="wh3.jpg"width="180px"height="180px";/>
+			<h4>World HistorySince 1500  <br/>An Open and Free Textbook  <br/>2013</h4>
+			<a href="wh3.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh4.jpg"width="180px"height="180px";/>
+			<h4>The History Book <br/>The stone Age of Egapt <br/>2023</h4>
+			<a href="wh4.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>	
+			<div class="bookdtl" id="box1"><img src="wh5.jpg"width="180px"height="180px";/>
+			<h4>The Rest is History<br/>Answerd Of Questions<br/>1885</h4>
+			<a href="wh5.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh6s.jpg"width="180px"height="180px";/>
+			<h4>African And Caribbean<br/>People In Britain<br/>2023</h4>
+			<a href="wh6s.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh7.jpg"width="180px"height="180px";/>
+			<h4>World History <br/>Of Cricate <br/>2012</h4>
+			<a href="wh7.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="whs.jpg"width="180px"height="180px";/>
+			<h4>The Great Irish<br/>History book <br/>1992</h4>
+			<a href="whs.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images4.jpg"width="180px"height="180px";/>
+			<h4>Creat Women mede History<br/>Activity Book <br/>2023</h4>
+			<a href="images4.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images3.jpg"width="180px"height="180px";/>
+			<h4>Childen's World history<br/>Bangladesh Edition <br/>2023</h4>
+			<a href="images3.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images2.jpg"width="180px"height="180px";/>
+			<h4>World History<br/>Fro civil serveces Time<br/>2023</h4>
+			<a href="images2.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="image5.jpg"width="180px"height="180px";/>
+			<h4>The first<br/>Book History<br/>2012</h4>
+			<a href="image5.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="image2s.jpg"width="180px"height="180px";/>
+			<h4>Son inaife The <br/> History of Britain<br/>1998</h4>
+			<a href="image2s.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+		</div>
+			
+	<div id="h3"><h3>LOve story Books</h3></div>
+		<div class="historyside">
+			<div class="bookdtl" id="box1"><img src="wh2.jpg"width="180px"height="180px";/>
+			<h4>The Usborne book Of <br/>World History <br/>1965</h4>
+			<a href="wh2.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>	
+			<div class="bookdtl" id="box1"><img src="wh3.jpg"width="180px"height="180px";/>
+			<h4>World HistorySince 1500  <br/>An Open and Free Textbook  <br/>2013</h4>
+			<a href="wh3.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh4.jpg"width="180px"height="180px";/>
+			<h4>The History Book <br/>The stone Age of Egapt <br/>2023</h4>
+			<a href="wh4.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>	
+			<div class="bookdtl" id="box1"><img src="wh5.jpg"width="180px"height="180px";/>
+			<h4>The Rest is History<br/>Answerd Of Questions<br/>1885</h4>
+			<a href="wh5.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh6s.jpg"width="180px"height="180px";/>
+			<h4>African And Caribbean<br/>People In Britain<br/>2023</h4>
+			<a href="wh6s.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="wh7.jpg"width="180px"height="180px";/>
+			<h4>World History <br/>Of Cricate <br/>2012</h4>
+			<a href="wh7.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="whs.jpg"width="180px"height="180px";/>
+			<h4>The Great Irish<br/>History book <br/>1992</h4>
+			<a href="whs.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images4.jpg"width="180px"height="180px";/>
+			<h4>Creat Women mede History<br/>Activity Book <br/>2023</h4>
+			<a href="images4.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images3.jpg"width="180px"height="180px";/>
+			<h4>Childen's World history<br/>Bangladesh Edition <br/>2023</h4>
+			<a href="images3.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>		
+			<div class="bookdtl" id="box1"><img src="images2.jpg"width="180px"height="180px";/>
+			<h4>World History<br/>Fro civil serveces Time<br/>2023</h4>
+			<a href="images2.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="image5.jpg"width="180px"height="180px";/>
+			<h4>The first<br/>Book History<br/>2012</h4>
+			<a href="image5.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+			<div class="bookdtl" id="box1"><img src="image2s.jpg"width="180px"height="180px";/>
+			<h4>Son inaife The <br/> History of Britain<br/>1998</h4>
+			<a href="image2s.jpg"><button type="submit" class="submitbutton">Read Now</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+// Show the modal when the "Free Appointment" button is clicked
+document.getElementById('appointment-btn').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevents the link from navigating
+    document.getElementById('appointment-modal').style.display = 'block';
+});
+
+// Close the modal when the close button is clicked
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('appointment-modal').style.display = 'none';
+});
+
+// Close the modal if the user clicks outside of the modal
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('appointment-modal')) {
+        document.getElementById('appointment-modal').style.display = 'none';
+    }
+});
+
+</script>
+</body>
+</html>
